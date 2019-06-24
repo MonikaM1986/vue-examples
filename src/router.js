@@ -1,24 +1,45 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: "/expressions",
+      component: () => import("./examples/expressions/expressions.vue")
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      path: "/directives",
+      component: () => import("./examples/directives/directives.vue")
+    },
+    {
+      path: "/filters",
+      component: () => import("./examples/filters/filters.vue")
+    },
+    {
+      path: "/conditional",
+      component: () => import("./examples/conditional/conditional.vue")
+    },
+    {
+      path: "/repeat",
+      component: () => import("./examples/repeat/repeat.vue")
+    },
+    {
+      path: "/data",
+      component: () => import("./examples/data/data.vue")
+    },
+    {
+      path: "/events",
+      component: () => import("./examples/events/events.vue")
+    },
+    {
+      path: "/lifecyce",
+      component: () => import("./examples/lifecycle/lifecycle.vue")
+    },
+    {
+      path: "/errors",
+      component: () => import("./examples/errors/errors.vue")
     }
   ]
 });
